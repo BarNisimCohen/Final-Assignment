@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <title>Madlan Property Value</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+      label {
+        display: block;
+      }
+      body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Property Value</h1>
+      <h2>Enter the property data:</h2>
+      <form id="measurement-form" action="{{ url_for('predict') }}" method="post">
+        <label for="City">City:</label>
+      <select id="City" name="City">
+  <option value="1">פתח תקווה</option>
+  <option value="2">נתניה</option>
+  <option value="3">באר שבע</option>
+  <option value="4">הרצליה</option>
+  <option value="5">אריאל</option>
+  <option value="6">דימונה</option>
+  <option value="7">רחובות</option>
+  <option value="8">גבעת שמואל</option>
+  <option value="9">ירושלים</option>
+  <option value="10">שוהם</option>
+  <option value="11">כפר סבא</option>
+  <option value="12">רעננה</option>
+  <option value="13">נהריה</option>
+  <option value="14">זכרון יעקב</option>
+  <option value="15">קרית ביאליק</option>
+  <option value="16">חיפה</option>
+  <option value="17">הוד השרון</option>
+  <option value="18">תל אביב</option>
+  <option value="19">ראשון לציון</option>
+  <option value="20">יהוד מונסון</option>
+  <option value="21">נס ציונה</option>
+  <option value="22">אילת</option>
+  <option value="23">חולון</option>
+  <option value="24">מודיעין מכבים רעות</option>
+  <option value="25">צפת</option>
+  <option value="26">בת ים</option>
+  <option value="27">רמת גן</option>
+  <option value="28">נוף הגליל</option>
+  <option value="29">בית שאן</option>
+</select>
+        <label for="Property Type">Property Type:</label>
+       <select id="type" name="type">
+  <option value="1">דירה</option>
+  <option value="2">דירת גן</option>
+  <option value="3">דירת גג</option>
+  <option value="4">בניין</option>
+  <option value="5">קוטג'</option>
+  <option value="6">בית פרטי</option>
+  <option value="7">דופלקס</option>
+  <option value="8">דירת נופש</option>
+  <option value="9">דו משפחתי</option>
+  <option value="10">פנטהאוז</option>
+  <option value="11">קוטג' טורי</option>
+  <option value="12">מיני פנטהאוז</option>
+  <option value="13">מגרש</option>
+  <option value="14">אחר</option>
+  <option value="15">טריפלקס</option>
+  <option value="16">נחלה</option>
+</select>
+
+<label for="Condition">Condition:</label>
+<select id="condition" name="condition">
+  <option value="1">שמור</option>
+  <option value="2">חדש</option>
+  <option value="3">משופץ</option>
+  <option value="4">לא צויין</option>
+  <option value="5">ישן</option>
+  <option value="6">דורש שיפוץ</option>
+</select>
+
+<label for="Entrance date">Entrance date:</label>
+<select id="entrance_date" name="entrance_date">
+  <option value="1">flexible</option>
+  <option value="2">less_than_6 months</option>
+  <option value="3">not_defined</option>
+  <option value="5">above_year</option>
+  <option value="6">months_6_12</option>
+</select>
+
+<label for="hasElevator">Elevator:</label>
+<select id="hasElevator" name="hasElevator">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+<label for="hasParking">Parking:</label>
+<select id="hasParking" name="hasParking">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+<label for="hasStorage">Storage:</label>
+<select id="hasStorage" name="hasStorage">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+<label for="hasBalcony">Balcony:</label>
+<select id="hasBalcony" name="hasBalcony">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+<label for="hasMamad">Mamad:</label>
+<select id="hasMamad" name="hasMamad">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+<label for="furniture">Furniture:</label>
+<select id="furniture" name="furniture">
+  <option value="1">yes</option>
+  <option value="0">no</option>
+</select><br><br>
+
+
+<label for="room_number">Number of Rooms (please enter number):</label>
+<input type="number" id="room_number" name="room_number"><br><br>
+
+<label for="Area">Property Area (please enter number):</label>
+<input type="number" id="Area" name="Area"><br><br>
+
+<label for="floor">Floor (please enter number):</label>
+<input type="number" id="floor" name="floor"><br><br>
+
+<label for="total_floors">Total Floors (please enter number):</label>
+<input type="number" id="total_floors" name="total_floors"><br><br>
+
+        
+        <button type="submit" class="btn btn-primary px-5">Calculate Cost</button>
+      </form>
+      <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
